@@ -20,6 +20,9 @@ class Neuron(nn.Module):
     def forward(self, x):
         return F.elu((x * self.rf).sum()) + 1
 
+
+from fitgabor.utils import gabor_fn
+
 theta = -np.pi/4
 groundtruth_rf = gabor_fn(theta, sigma=4, Lambda=14, psi=np.pi/2, gamma=1, center=(15, 5), size=(64, 64))
 neuron = Neuron(groundtruth_rf)
@@ -32,6 +35,8 @@ Here is the **ground truth** RF:
 ### 2. Initialize and train the gabor generator
 
 ``` python
+from fitgabor import GaborGenerator, trainer_fn
+
 gabor_gen = GaborGenerator(image_size=(64, 64))
 gabor_gen, _ = trainer_fn(gabor_gen, neuron,
                           epochs=20000,
