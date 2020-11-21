@@ -44,7 +44,7 @@ And here is the learning evolution:
   <img width="230" height="230" src="figures/evolution1.gif">
 </p>
 
-### 3. Tried it and didn't work?
+## Tried it and didn't work? 
 
 Let me know, please! I would love to know why it did not work and help fix it :construction_worker:
 
