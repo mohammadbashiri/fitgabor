@@ -19,6 +19,10 @@ class Neuron(nn.Module):
         
     def forward(self, x):
         return F.elu((x * self.rf).sum()) + 1
+
+theta = -np.pi/4
+groundtruth_rf = gabor_fn(theta, sigma=4, Lambda=14, psi=np.pi/2, gamma=1, center=(15, 5), size=(64, 64))
+neuron = Neuron(groundtruth_rf)
 ```
 Here is the **ground truth** RF:
 <p align="center">
