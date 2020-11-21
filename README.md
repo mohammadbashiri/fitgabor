@@ -38,9 +38,9 @@ And here is the result:
 ---
 ## More examples
 
-Ground truth            |  Learned
+Ground turth             |  Learned
 :-------------------------:|:-------------------------:
-<p align="center"> <img width="300" height="300" src="figures/groundtruth0.png"> </p>  |  <p align="center"> <img width="230" height="230" src="figures/evolution0.gif"> </p> 
-<p align="center"> <img width="300" height="300" src="figures/groundtruth2.png"> </p>  |  <p align="center"> <img width="230" height="230" src="figures/evolution2.gif"> </p>
-<p align="center"> <img width="300" height="300" src="figures/groundtruth3.png"> </p>  |  <p align="center"> <img width="230" height="230" src="figures/evolution3.gif"> </p>
-<p align="center"> <img width="300" height="300" src="figures/groundtruth4.png"> </p>  |  <p align="center"> <img width="230" height="230" src="figures/evolution4.gif"> </p>
+![](figures/groundtruth0.png)  |  ![](figures/evolution0.gif)
+![](figures/groundtruth2.png)  |  ![](figures/evolution2.gif)
+![](figures/groundtruth3.png)  |  ![](figures/evolution3.gif)
+![](figures/groundtruth4.png)  |  ![](figures/evolution4.gif)
