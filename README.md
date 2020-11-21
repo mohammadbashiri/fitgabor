@@ -57,7 +57,7 @@ And here is the learning evolution:
 
 Let me know, please! I would love to know why it did not work and help fix it :construction_worker:
 
----
+<!-- ---
 ## More examples
 
 Ground turth             |  Learned
@@ -65,4 +65,4 @@ Ground turth             |  Learned
 ![](figures/groundtruth0.png)  |  ![](figures/evolution0.gif)
 ![](figures/groundtruth2.png)  |  ![](figures/evolution2.gif)
 ![](figures/groundtruth3.png)  |  ![](figures/evolution3.gif)
-![](figures/groundtruth4.png)  |  ![](figures/evolution4.gif)
+![](figures/groundtruth4.png)  |  ![](figures/evolution4.gif) -->
