@@ -1,2 +1,2 @@
-from .gabor import GaborGenerator, gabor_fn
+from .gabor_gen import GaborGenerator
 from .trainer import trainer_fn
