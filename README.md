@@ -1,6 +1,6 @@
 # Fit Gabor
 
-If you have a neuron model and you want to find the gabor filter that maximizes the activity of your model neuron, this tool might come handy.
+If you have a neuron model and you want to find the gabor filter that maximizes the activity of your model neuron, this tool might come handy - it finds the input arguments to a gabor-generating function via gradient descent.
 
 ## Example
 
