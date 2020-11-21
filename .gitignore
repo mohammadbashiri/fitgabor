@@ -2,7 +2,7 @@ notebooks/exploratory/
 lightning_logs/
 lib/
 data/
-secrets/
+extras/
 *MNIST/
 *egg-info/
 .log
@@ -19,7 +19,6 @@ secrets/
 *.pt
 *.pickle
 *.npy
-*.gif
 *.egg
 *.csv
 *.vscode
