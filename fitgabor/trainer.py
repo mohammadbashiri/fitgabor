@@ -3,11 +3,14 @@ import torch
 from torch import optim
 from tqdm import trange
 
-def trainer_fn(gabor_generator, model_neuron, epochs=20000, sigma_reg_lambda=0., fixed_std=None, save_rf_every_n_epoch=None):
+def trainer_fn(gabor_generator, model_neuron, 
+               epochs=20000, lr=1e-3, 
+               fixed_std=.01, 
+               save_rf_every_n_epoch=None):
     
     gabor_generator.apply_changes()
     
-    optimizer = optim.Adam(gabor_generator.parameters(), lr=1e-3)
+    optimizer = optim.Adam(gabor_generator.parameters(), lr=lr)
     pbar = trange(epochs, desc="Loss: {}".format(np.nan), leave=True)
     saved_rfs = []
     for epoch in pbar:
@@ -17,10 +20,10 @@ def trainer_fn(gabor_generator, model_neuron, epochs=20000, sigma_reg_lambda=0.,
         gabor = gabor_generator()
         
         if fixed_std is not None:
-            gabor_std = gabor.data.std()
-            gabor.data = .01 * gabor.data / gabor_std
+            gabor_std = gabor.std()
+            gabor_std_constrained = fixed_std * gabor / gabor_std
         
-        loss = -model_neuron(gabor) + sigma_reg_lambda * gabor_generator.sigma.abs()
+        loss = -model_neuron(gabor_std_constrained)
         loss.backward()
         optimizer.step()
 

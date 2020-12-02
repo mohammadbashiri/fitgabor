@@ -38,9 +38,7 @@ Here is the **ground truth** RF:
 from fitgabor import GaborGenerator, trainer_fn
 
 gabor_gen = GaborGenerator(image_size=(64, 64))
-gabor_gen, _ = trainer_fn(gabor_gen, neuron,
-                          epochs=20000,
-                          sigma_reg_lambda=7.25)
+gabor_gen, _ = trainer_fn(gabor_gen, neuron)
 ```
 
 You can generate the learned gabor simply by calling the model:
