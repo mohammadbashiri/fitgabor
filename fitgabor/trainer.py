@@ -31,7 +31,7 @@ def trainer_fn(gabor_generator, model_neuron,
         
         if save_rf_every_n_epoch is not None:
             if (epoch % save_rf_every_n_epoch) == 0:
-                saved_rfs.append(gabor.cpu().data.numpy())
+                saved_rfs.append(gabor.squeeze().cpu().data.numpy())
 
     gabor_generator.eval();
     return gabor_generator, saved_rfs

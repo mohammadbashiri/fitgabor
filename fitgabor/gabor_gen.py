@@ -55,7 +55,7 @@ class GaborGenerator(nn.Module):
 
         gb = torch.exp(-.5 * (x_theta ** 2 / sigma_x ** 2 + y_theta ** 2 / sigma_y ** 2)) * torch.cos(2 * torch.pi / self.Lambda * x_theta + self.psi)
 
-        return gb
+        return gb.view(1, 1, *self.image_size)
     
     def apply_changes(self):
         self.sigma.requires_grad_(True)
