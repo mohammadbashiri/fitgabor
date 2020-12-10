@@ -17,6 +17,7 @@ def trainer_fn(gabor_generator, model_neuron,
     saved_rfs = []
     for epoch in pbar:
         lr *= lr_decay
+
         optimizer.zero_grad()
 
         # generate gabor
