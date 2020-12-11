@@ -16,23 +16,24 @@ def trainer_fn(gabor_generator, model_neuron,
     pbar = trange(epochs, desc="Loss: {}".format(np.nan), leave=True)
     saved_rfs = []
     for epoch in pbar:
-        optimizer.zero_grad()
-
-        # generate gabor
-        gabor = gabor_generator()
-
-        if fixed_std is not None:
-            gabor_std = gabor.std()
-            gabor_std_constrained = fixed_std * gabor / gabor_std
-
-        loss = -model_neuron(gabor_std_constrained)
-
-        loss.backward()
-
         def closure():
+            optimizer.zero_grad()
+
+            # generate gabor
+            gabor = gabor_generator()
+
+            if fixed_std is not None:
+                gabor_std = gabor.std()
+                gabor_std_constrained = fixed_std * gabor / gabor_std
+
+            loss = -model_neuron(gabor_std_constrained)
+
+            loss.backward()
+
             return loss
 
-        optimizer.step(closure)
+        loss = optimizer.step(closure)
+        loss = loss.detach().numpy()
 
         pbar.set_description("Loss: {:.2f}".format(loss.item()))
 
