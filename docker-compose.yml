@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+
+  jupyterlab:
+    image: fitgabor
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/project
+    entrypoint:
+      - jupyter
+      - lab
+      - --allow-root
