@@ -51,6 +51,19 @@ And here is the learning evolution:
   <img width="230" height="230" src="figures/evolution1.gif">
 </p>
 
+## Cite as
+
+```
+@software{Bashiri_fitgabor_2020,
+author = {Bashiri, Mohammad},
+month = dec,
+title = {{fitgabor}},
+url = {https://github.com/mohammadbashiri/fitgabor},
+version = {0.0},
+year = {2020}
+}
+```
+
 ## Tried it and didn't work? 
 
 Let me know, please! I would love to know why it did not work and help fix it :construction_worker:
